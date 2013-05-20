@@ -52,7 +52,7 @@
 		1F3B0CE914F725E100511DCC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1F3B0CEA14F725E100511DCC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1F6FBCBD15546FC900FA9225 /* opentok.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = opentok.bundle; path = "opentok-ios-sdk-webrtc/Opentok.framework/Versions/A/Resources/opentok.bundle"; sourceTree = SOURCE_ROOT; };
-		1FE24FB714F71E47002929E6 /* OpenTokHello.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenTokHello.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FE24FB714F71E47002929E6 /* HuboVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HuboVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE24FBB14F71E47002929E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1FE24FBD14F71E47002929E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1FE24FBF14F71E47002929E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -113,7 +113,7 @@
 		1FE24FB814F71E47002929E6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FE24FB714F71E47002929E6 /* OpenTokHello.app */,
+				1FE24FB714F71E47002929E6 /* HuboVision.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,7 +189,7 @@
 			);
 			name = HuboVision;
 			productName = OpenTokHelloWorld;
-			productReference = 1FE24FB714F71E47002929E6 /* OpenTokHello.app */;
+			productReference = 1FE24FB714F71E47002929E6 /* HuboVision.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -327,7 +327,7 @@
 				GCC_PREFIX_HEADER = "HuboVision/HuboVision-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/HuboVision/HuboVision-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = OpenTokHello;
+				PRODUCT_NAME = HuboVision;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
@@ -345,7 +345,7 @@
 				GCC_PREFIX_HEADER = "HuboVision/HuboVision-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/HuboVision/HuboVision-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = OpenTokHello;
+				PRODUCT_NAME = HuboVision;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
