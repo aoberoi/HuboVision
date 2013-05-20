@@ -20,8 +20,6 @@ static NSString* const kApiKey = @"29677082";    // Replace with your API Key
 static NSString* const kSessionId = @"1_MX4yOTY3NzA4Mn4xMjcuMC4wLjF-U3VuIE1heSAxOSAxMTo0OTo0MCBQRFQgMjAxM34wLjg0NjQxMjN-"; // Replace with your generated Session ID
 static NSString* const kToken = @"T1==cGFydG5lcl9pZD0yOTY3NzA4MiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz1lYjdjMWFjZGZmNzA3MTQwOWE0MjMzNjJhZWQyZTZlOWUwZTNmZjYzOnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9MV9NWDR5T1RZM056QTRNbjR4TWpjdU1DNHdMakYtVTNWdUlFMWhlU0F4T1NBeE1UbzBPVG8wTUNCUVJGUWdNakF4TTM0d0xqZzBOalF4TWpOLSZjcmVhdGVfdGltZT0xMzY4OTg5NDUzJm5vbmNlPTAuMzM1MDMxNDgwMzk3MTExNSZleHBpcmVfdGltZT0xMzY5MDc1ODUyJmNvbm5lY3Rpb25fZGF0YT0=";     // Replace with your generated Token (use Project Tools or from a server-side library)
 
-static bool subscribeToSelf = NO; // Change to YES if you want to subscribe to your own stream.
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -88,10 +86,7 @@ static bool subscribeToSelf = NO; // Change to YES if you want to subscribe to y
     NSLog(@"session didReceiveStream (%@)", stream.streamId);
     
     // See the declaration of subscribeToSelf above.
-    if ( (subscribeToSelf && [stream.connection.connectionId isEqualToString: _session.connection.connectionId])
-           ||
-         (!subscribeToSelf && ![stream.connection.connectionId isEqualToString: _session.connection.connectionId])
-       ) {
+    if (![stream.connection.connectionId isEqualToString: _session.connection.connectionId]) {
         if (!_subscriber) {
             _subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
         }
@@ -101,8 +96,7 @@ static bool subscribeToSelf = NO; // Change to YES if you want to subscribe to y
 - (void)session:(OTSession*)session didDropStream:(OTStream*)stream{
     NSLog(@"session didDropStream (%@)", stream.streamId);
     NSLog(@"_subscriber.stream.streamId (%@)", _subscriber.stream.streamId);
-    if (!subscribeToSelf
-        && _subscriber
+    if (_subscriber
         && [_subscriber.stream.streamId isEqualToString: stream.streamId])
     {
         _subscriber = nil;
